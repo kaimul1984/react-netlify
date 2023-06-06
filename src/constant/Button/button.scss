@@ -1,0 +1,48 @@
+@import "../../global.scss";
+
+.common-button{
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: capitalize;
+  border: none;
+  background-color: $button-color;
+  color: $common-color;
+  font-size: 1.2em;
+  font-weight: 700;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 111;
+  cursor: pointer;
+  &:hover{
+    color: $main-color;
+
+  }
+
+  @include respond(mobile){
+    padding: .5rem 1rem;
+  }
+//   a{
+//     text-decoration: none;
+//     color: #fff;
+//     font-size: 1.6rem;
+//   }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 200%;
+    top: 0;
+    left: -50px;
+    background-color: $active-color;
+    transform: skewx(40deg);
+    z-index: -1;
+    transition: width 0.5s;
+  }
+  &:hover::after{
+      width: 170%;
+      
+  }
+}

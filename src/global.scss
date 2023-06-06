@@ -1,0 +1,167 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+$main-color: #fff;
+$primary-color:#FFF9E1;
+$secondary-color: #FFC900;
+$active-color: #0355FF;
+$button-color: #F9B900;
+$heading-color: #FF5000;
+$common-color: #000;
+$youtube: #ff0000;
+$facebook: #1877f2;
+$twitter: #1da1f2;
+$instagram: #c13584;
+$linkedin: #0077b5;
+$github: #333333;
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  //font-size: 62.5%;
+  overflow: scroll;
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+}
+// body {
+//   font-family: "Montserrat", sans-serif;
+//   text-transform: capitalize;
+//  // font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1280 - 320)));
+ 
+// }
+html {font-size: 100%;} /*16px*/
+
+body {
+
+ font-family: 'Nunito', sans-serif;
+  color: #000000;
+ text-transform: capitalize;
+ scroll-behavior: smooth;
+ height: 100%;
+   //overflow-y: hidden;
+
+}
+
+.container{
+  max-width: 1420px;
+  width: 100%;
+  
+}
+
+p {margin-bottom: 1rem;}
+
+// h1, h2, h3, h4, h5, h6 {
+//   //margin: 0 1.38rem;
+//   font-weight: 400;
+//   line-height: 1.3;
+// }
+h1 {
+  font-size: clamp(2rem, 3.5vw, 5rem); /* Large heading */
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 3rem); /* Medium heading */
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 2.5rem); /* Small heading */
+}
+
+h4 {
+  font-size: clamp(1rem, 2vw, 2rem); /* Extra small heading */
+}
+
+h5 {
+  font-size: clamp(0.875rem, 1.5vw, 1.5rem); /* Tiny heading */
+}
+
+ul {
+  list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    
+}
+img {
+  max-width: 100%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+$width-el: 1600px;
+$width-d: 1200px;
+$width-t: 768px;
+$width-m: 576px;
+$width-l: 992px;
+
+
+@mixin respond ($breakpoint) {
+  @if $breakpoint == bigscreen {
+    @media only screen and (min-width: 1600px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 1286px) {
+      @content;
+    }
+  }
+  @if $breakpoint == laptop {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == landscape{
+    @media (min-width: 667px) and (max-width:812px) {
+      @content;
+    }
+  }
+  
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 576px) {
+      @content;
+    }
+  }
+  @if $breakpoint == largemobile{
+    @media (min-width: 450px) and (max-width:570px) {
+      @content;
+    }
+  }
+}
